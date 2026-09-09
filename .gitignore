@@ -1,0 +1,29 @@
+# Data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Models & artifacts
+models/*.joblib
+models/*.pkl
+!models/.gitkeep
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+
+# Kaggle credentials
+kaggle.json
+
+# CatBoost training artifacts
+catboost_info/

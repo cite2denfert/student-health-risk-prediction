@@ -1,0 +1,12 @@
+{
+  "best_model": "HistGradientBoost",
+  "balanced_accuracy_before_calibration": 0.942436616923373,
+  "accuracy_before_calibration": 0.9363923546204118,
+  "balanced_accuracy_after_calibration_naive_argmax": 0.865384317378818,
+  "accuracy_after_calibration_naive_argmax": 0.9659392253184367,
+  "balanced_accuracy_after_calibration_prior_adjusted": 0.9415401683864252,
+  "accuracy_after_calibration_prior_adjusted": 0.9297555391325769,
+  "train_rows": 552070,
+  "valid_rows": 138018,
+  "bake_off_sample_size": 150000
+}
