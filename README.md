@@ -98,7 +98,7 @@
 문제를 감추기 때문입니다. "학생 한 명 한 명을 놓치지 않기" 위해 모든 클래스를 동등하게
 평가합니다.
 
-### 모델 비교 (7종 오디션)
+### 모델 비교 (7종)
 
 `python -m src.train` 실행 결과 (`reports/metrics/model_comparison.csv`, valid set 기준):
 
@@ -114,6 +114,19 @@
 
 HistGradientBoosting과 CatBoost가 Balanced Accuracy 기준 사실상 동률이지만,
 HistGradientBoosting의 학습 시간이 약 3배 짧아(4.7s vs 16.1s) **최종 모델로 채택**했습니다.
+
+### 무엇이 점수를 움직였나 (Ablation)
+
+최종 모델(HistGradientBoosting)에서 구성 요소를 하나씩 빼고 valid Balanced Accuracy를 비교했습니다.
+
+| 설정 | Balanced Accuracy | 차이 |
+|---|---:|---:|
+| 전체 (class_weight + 파생변수) | 0.9424 | — |
+| class_weight 제거 | 0.8663 | −0.076 |
+| 파생변수 제거 | 0.9093 | −0.033 |
+
+가장 큰 기여는 **클래스 불균형 처리**(`class_weight="balanced"`)였고, 파생변수도 의미 있는
+성능 이득을 주면서 동시에 "어떤 교사가 무엇을 해야 하는지" 설명하는 근거가 됩니다.
 
 ### 확률 보정(Calibration)의 함정
 

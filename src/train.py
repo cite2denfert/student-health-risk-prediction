@@ -1,5 +1,5 @@
 """
-학습 파이프라인 ("모델링 파이프라인 — 7단계" 재현)
+학습 파이프라인 (7단계)
 
     ① 데이터 준비
     ② Train / Valid 분리 (stratify)
@@ -31,7 +31,7 @@ from src.pipeline import build_preprocessor, prepare_features
 
 
 def bake_off(X_train, y_train, X_valid, y_valid, sample_size: int | None) -> pd.DataFrame:
-    """'머신러닝 모델 비교 — 7종 오디션' 재현: 후보 모델을 모두 학습해 비교."""
+    """후보 모델 7종을 동일한 파이프라인으로 학습해 Balanced Accuracy로 비교."""
     if sample_size and sample_size < len(X_train):
         X_bo = X_train.sample(sample_size, random_state=config.RANDOM_STATE)
         y_bo = y_train.loc[X_bo.index]

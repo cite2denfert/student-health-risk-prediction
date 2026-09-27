@@ -1,4 +1,4 @@
-"""후보 모델 정의 (머신러닝 모델 비교 — 7종 오디션)"""
+"""후보 모델 정의 (7종 모델 비교용)"""
 import numpy as np
 from sklearn.ensemble import (
     ExtraTreesClassifier,

@@ -47,7 +47,7 @@ def plot_fatigue_by_class(df: pd.DataFrame, save_path):
 
 
 def anova_effect_sizes(enriched: pd.DataFrame) -> pd.DataFrame:
-    """통계검정(ANOVA, eta-squared) 재현: 파생변수별 클래스 간 유의성."""
+    """통계검정(ANOVA, eta-squared): 파생변수별 클래스 간 차이의 유의성과 효과크기."""
     rows = []
     for col in config.DERIVED_FEATURE_NAMES:
         if col not in enriched.columns:

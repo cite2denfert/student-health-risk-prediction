@@ -16,7 +16,6 @@ def build_preprocessor() -> ColumnTransformer:
     """
     Numeric  : Median Imputation -> StandardScaler
     Categorical : Most Frequent Imputation -> One-Hot Encoding
-    (ColumnTransformer 단계 재현)
     """
     numeric_pipeline = Pipeline(steps=[
         ("imputer", SimpleImputer(strategy="median")),
